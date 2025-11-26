@@ -6,6 +6,7 @@ import { Menu, Rocket } from "lucide-react";
 export function Header() {
     const navItems = [
         { name: "Process", href: "/#process" },
+        { name: "Testimonials", href: "/#testimonials" },
         { name: "Pricing", href: "/#pricing" },
         { name: "FAQ", href: "/#faq" },
     ];

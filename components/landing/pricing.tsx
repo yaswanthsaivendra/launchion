@@ -64,13 +64,13 @@ export function Pricing() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className={`relative rounded-2xl p-8 border ${plan.popular
-                                ? "border-primary bg-primary/5 shadow-2xl shadow-primary/10 scale-105 z-10"
-                                : "border-border bg-card hover:border-primary/50 transition-colors"
+                            className={`relative rounded-2xl p-6 lg:p-8 border ${plan.popular
+                                    ? "border-primary bg-primary/5 shadow-2xl shadow-primary/10 lg:scale-105 z-10"
+                                    : "border-border bg-card hover:border-primary/50 transition-colors"
                                 }`}
                         >
                             {plan.popular && (
@@ -79,19 +79,19 @@ export function Pricing() {
                                 </div>
                             )}
 
-                            <div className="mb-8">
-                                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                            <div className="mb-6 lg:mb-8">
+                                <h3 className="text-xl lg:text-2xl font-bold mb-2">{plan.name}</h3>
                                 <div className="flex items-baseline gap-1 mb-4">
-                                    <span className="text-4xl font-bold">{plan.price}</span>
-                                    <span className="text-muted-foreground">/one-time</span>
+                                    <span className="text-3xl lg:text-4xl font-bold">{plan.price}</span>
+                                    <span className="text-muted-foreground text-sm">/one-time</span>
                                 </div>
                                 <p className="text-muted-foreground text-sm">{plan.description}</p>
                             </div>
 
-                            <ul className="space-y-4 mb-8">
+                            <ul className="space-y-3 lg:space-y-4 mb-6 lg:mb-8">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex items-start gap-3 text-sm">
-                                        <Check className="h-5 w-5 text-primary shrink-0" />
+                                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                                         <span>{feature}</span>
                                     </li>
                                 ))}

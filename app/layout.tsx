@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { PaletteSwitcher } from "@/components/palette-switcher";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${dmSerif.variable} antialiased`}
       >
         <Providers>
+          <PaletteSwitcher />
           <Header />
           {children}
           <Footer />
