@@ -24,38 +24,30 @@ const clients: Client[] = [
 ];
 
 export function ClientLogos() {
-    return (
-        <div className="w-full py-12 overflow-hidden">
-            <p className="text-center text-sm font-medium text-muted-foreground mb-8 uppercase tracking-widest">
-                Trusted by innovative teams
-            </p>
+    // Duplicate the list for seamless loop
+    const duplicatedClients = [...clients, ...clients];
 
-            {/* Auto-scrolling Marquee */}
+    return (
+        <div className="w-full overflow-hidden">
+            <p className="text-sm text-muted-foreground mb-6 tracking-wide uppercase">
+                Trusted by innovative startups
+            </p>
             <div className="relative">
-                <div className="flex gap-8 md:gap-12 animate-marquee">
-                    {/* First set of logos */}
-                    {clients.map((client, index) => (
-                        <span
-                            key={`first-${index}`}
-                            className={`text-xl md:text-2xl text-muted-foreground/50 whitespace-nowrap ${client.style}`}
+                {/* Gradient overlays */}
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+                {/* Scrolling container */}
+                <div className="flex gap-12 animate-marquee">
+                    {duplicatedClients.map((client, index) => (
+                        <div
+                            key={index}
+                            className={`shrink-0 text-xl text-muted-foreground/60 hover:text-foreground transition-all duration-300 cursor-pointer hover:scale-110 ${client.style}`}
                         >
                             {client.name}
-                        </span>
-                    ))}
-                    {/* Duplicate set for seamless loop */}
-                    {clients.map((client, index) => (
-                        <span
-                            key={`second-${index}`}
-                            className={`text-xl md:text-2xl text-muted-foreground/50 whitespace-nowrap ${client.style}`}
-                        >
-                            {client.name}
-                        </span>
+                        </div>
                     ))}
                 </div>
-
-                {/* Gradient Overlays */}
-                <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-background to-transparent pointer-events-none" />
-                <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-background to-transparent pointer-events-none" />
             </div>
         </div>
     );

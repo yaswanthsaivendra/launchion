@@ -5,6 +5,9 @@ import { Providers } from "@/components/providers";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { PaletteSwitcher } from "@/components/palette-switcher";
+import { Analytics } from "@/components/analytics";
+
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -21,8 +24,38 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Launch Ion",
-  description: "Launch Ion is a platform for interactive live demos.",
+  title: {
+    default: "Launch Ion | Launch Your MVP in 15 Days",
+    template: "%s | Launch Ion",
+  },
+  description: "Launch Ion is the ultimate boilerplate for startups. We turn your idea into a market-ready product in just 15 days with high-quality code and design.",
+  keywords: ["MVP", "startup", "boilerplate", "nextjs", "launch", "product development", "software agency"],
+  authors: [{ name: "Launch Ion Team" }],
+  creator: "Launch Ion",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://launchion.com",
+    title: "Launch Ion | Launch Your MVP in 15 Days",
+    description: "Turn your idea into a market-ready product fast. No fluff, no endless meetings. Just high-quality code that converts.",
+    siteName: "Launch Ion",
+    images: [
+      {
+        url: "/og-image.jpg", // We should create this later
+        width: 1200,
+        height: 630,
+        alt: "Launch Ion - Launch Your MVP",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Launch Ion | Launch Your MVP in 15 Days",
+    description: "Turn your idea into a market-ready product fast. No fluff, no endless meetings.",
+    images: ["/og-image.jpg"],
+    creator: "@launchion",
+  },
+  metadataBase: new URL("https://launchion.com"),
 };
 
 export default function RootLayout({
@@ -35,7 +68,11 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${dmSerif.variable} antialiased`}
       >
+
+
         <Providers>
+          <ScrollProgress />
+          <Analytics />
           <PaletteSwitcher />
           <Header />
           {children}

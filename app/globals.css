@@ -132,6 +132,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  /* Offset for fixed header */
 }
 
 @layer base {

@@ -12,17 +12,17 @@ export function CTA() {
             </div>
 
             <div className="container px-4 mx-auto text-center">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-balance">
                     Ready to Launch Your Idea?
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
                     Don't let your idea stay a dream. Let's build it, launch it, and get your first users in just 15 days.
                 </p>
 
-                <Button size="lg" className="h-14 px-10 text-lg group" asChild>
+                <Button size="lg" className="h-14 px-10 text-lg group hover:shadow-xl hover:scale-105 transition-all duration-300" asChild>
                     <Link href="#pricing">
                         Start Your Launch
-                        <Rocket className="ml-2 h-5 w-5 group-hover:-translate-y-1 transition-transform" />
+                        <Rocket className="ml-2 h-5 w-5 group-hover:-translate-y-1 group-hover:rotate-12 transition-all duration-300" />
                     </Link>
                 </Button>
             </div>

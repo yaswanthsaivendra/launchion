@@ -38,7 +38,7 @@ export function FAQ() {
         <section id="faq" className="py-24">
             <div className="container px-4 mx-auto max-w-3xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-balance">
                         Frequently Asked <span className="text-primary">Questions</span>
                     </h2>
                 </div>
@@ -46,10 +46,10 @@ export function FAQ() {
                 <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
                         <AccordionItem key={index} value={`item-${index}`}>
-                            <AccordionTrigger className="text-left text-lg">
+                            <AccordionTrigger className="text-left text-lg tracking-tight hover:text-primary transition-colors">
                                 {faq.question}
                             </AccordionTrigger>
-                            <AccordionContent className="text-muted-foreground">
+                            <AccordionContent className="text-muted-foreground leading-relaxed">
                                 {faq.answer}
                             </AccordionContent>
                         </AccordionItem>
