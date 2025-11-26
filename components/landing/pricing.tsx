@@ -56,6 +56,11 @@ export function Pricing() {
         <section id="pricing" className="py-24 bg-card/30">
             <div className="container px-4 mx-auto">
                 <div className="text-center max-w-3xl mx-auto mb-16">
+                    {/* Urgency Badge */}
+                    <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary animate-pulse">
+                        <span>Limited spots available this month</span>
+                    </div>
+
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-balance">
                         Simple, Transparent <span className="text-primary">Pricing</span>
                     </h2>

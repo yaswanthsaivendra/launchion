@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Rocket, Zap, Star } from "lucide-react";
+import { Rocket, CheckCircle2, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { ClientLogos } from "./client-logos";
@@ -17,38 +17,48 @@ export function Hero() {
 
       <div className="container px-4 mx-auto text-center relative z-10">
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100 text-balance">
-          Launch Your Product in <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-            Just 15 Days.
-          </span>
+          Launch Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">MVP in 15 Days</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 leading-relaxed">
-          We turn your idea into a market-ready product fast. No fluff, no endless meetings. Just high-quality code that converts.
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 leading-relaxed">
+          From idea to live product. We take care of design, development, and deployment so you can focus on growth.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
+        {/* Microproof Line */}
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
+            <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+            <span className="text-sm md:text-base">
+              <span className="font-semibold text-foreground">20+</span>
+              <span className="text-muted-foreground ml-1">MVPs Built</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
+            <TrendingUp className="w-4 h-4 text-primary shrink-0" />
+            <span className="text-sm md:text-base">
+              <span className="font-semibold text-foreground">3</span>
+              <span className="text-muted-foreground ml-1">Clients Raised Pre-Seed</span>
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
           <Button size="lg" className="h-12 px-8 text-base group cta-primary hover:shadow-xl hover:scale-105 transition-all duration-300" asChild>
             <Link href="/#pricing">
               Start Your Launch
               <Rocket className="ml-2 h-4 w-4 group-hover:-translate-y-1 group-hover:rotate-12 transition-all duration-300" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="h-12 px-8 text-base cta-secondary hover:shadow-md hover:scale-105 transition-all duration-300" asChild>
-            <Link href="/#process">
-              How it Works
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
         </div>
 
-
-
-        {/* Trust Indicators */}
-        <div className="mt-12 flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-700">
-          <div className="flex -space-x-4">
+        {/* Social Proof - Stacked Avatars */}
+        <div className="mt-12 flex items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-700">
+          <div className="flex -space-x-3">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="relative w-10 h-10 rounded-full ring-2 ring-background overflow-hidden hover:scale-110 transition-transform duration-300 cursor-pointer z-0 hover:z-10">
+              <div 
+                key={i} 
+                className="relative w-10 h-10 rounded-full ring-2 ring-background overflow-hidden hover:scale-110 transition-transform duration-300 cursor-pointer z-0 hover:z-10"
+              >
                 <Image
                   src={`/images/hero/founder-${i + 1}.jpg`}
                   alt="Founder"
@@ -59,13 +69,13 @@ export function Hero() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-1 text-sm font-medium">
-            <div className="flex text-yellow-500">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-current" />
-              ))}
-            </div>
-            <span className="text-muted-foreground ml-2">Trusted by 10+ founders</span>
+          <div className="text-left">
+            <p className="text-sm font-medium text-foreground">
+              Trusted by founders
+            </p>
+            <p className="text-xs text-muted-foreground">
+              20+ MVPs launched
+            </p>
           </div>
         </div>
 

@@ -11,6 +11,8 @@ interface Testimonial {
     company: string;
     content: string;
     image: string;
+    metric?: string;
+    outcome?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -21,6 +23,8 @@ const testimonials: Testimonial[] = [
         content:
             "Launch Ion transformed our rough idea into a polished MVP in just two weeks. The speed and quality of delivery were exceptional. We secured our pre-seed funding a month later.",
         image: "/images/testimonials/testimonial-1.jpg",
+        metric: "Raised $50K pre-seed",
+        outcome: "1 month after launch",
     },
     {
         name: "Emma Schmidt",
@@ -29,6 +33,8 @@ const testimonials: Testimonial[] = [
         content:
             "As a technical founder, I was skeptical about outsourcing. But their code quality is top-notch: clean, scalable, and well-documented. It was the perfect foundation for our internal team.",
         image: "/images/testimonials/testimonial-2.jpg",
+        metric: "Launched in 12 days",
+        outcome: "vs 3 months estimated",
     },
     {
         name: "Marcus Johnson",
@@ -37,6 +43,8 @@ const testimonials: Testimonial[] = [
         content:
             "The design process was collaborative and insightful. They didn't just build what we asked for; they helped us refine the product to better serve our users. Highly recommended!",
         image: "/images/testimonials/testimonial-3.jpg",
+        metric: "First 100 users",
+        outcome: "in 2 weeks post-launch",
     },
 ];
 
@@ -88,9 +96,21 @@ export function Testimonials() {
                                     ))}
                                 </div>
                                 <Quote className="w-10 h-10 text-primary/20 mb-4 transition-transform group-hover:scale-110" />
-                                <p className="text-muted-foreground leading-relaxed flex-grow">
+                                <p className="text-muted-foreground leading-relaxed flex-grow mb-4">
                                     "{testimonial.content}"
                                 </p>
+                                {testimonial.metric && (
+                                    <div className="mt-4 pt-4 border-t border-border/50">
+                                        <div className="flex items-center gap-2 text-sm">
+                                            <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                                                <span className="font-semibold text-primary">{testimonial.metric}</span>
+                                            </div>
+                                            {testimonial.outcome && (
+                                                <span className="text-muted-foreground">{testimonial.outcome}</span>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="flex items-center gap-4 mt-auto pt-6 border-t border-border">
