@@ -4,7 +4,6 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { PaletteSwitcher } from "@/components/palette-switcher";
 import { Analytics } from "@/components/analytics";
 
 import { ScrollProgress } from "@/components/ui/scroll-progress";
@@ -73,7 +72,6 @@ export default function RootLayout({
         <Providers>
           <ScrollProgress />
           <Analytics />
-          <PaletteSwitcher />
           <Header />
           {children}
           <Footer />
