@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { portfolioProjects } from "@/lib/portfolio-data";
+import { workProjects } from "@/lib/work-data";
 import {
     SiNextdotjs,
     SiDjango,
@@ -55,17 +55,18 @@ const iconColors: Record<string, string> = {
     SiSolidity: "#363636",
 };
 
-export function PortfolioSection() {
+export function WorkSection() {
     return (
         <section
-            id="portfolio"
+            id="work"
             className="bg-background py-12 sm:py-16 md:py-20 overflow-hidden"
         >
             <div className="container max-w-6xl px-4 sm:px-6 mx-auto">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-2">
-                        Our <span className="text-primary">Work</span>
+                        Built by <span className="text-primary">us</span>. Loved by{" "}
+                        <span className="text-primary">users</span>.
                     </h2>
                     <p className="text-muted-foreground text-base sm:text-lg px-2">
                         Real MVPs we've built for founders. From SaaS platforms to Web3
@@ -75,7 +76,7 @@ export function PortfolioSection() {
 
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {portfolioProjects.map((project, index) => (
+                    {workProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 30 }}

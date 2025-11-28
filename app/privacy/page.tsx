@@ -54,7 +54,7 @@ export default function PrivacyPage() {
           <h2 className="mb-4 text-2xl font-semibold">4. Contact Us</h2>
           <p className="text-muted-foreground">
             If you have questions or comments about this policy, you may email
-            us at support@launchion.com.
+            us at shubham@launchion.pro.
           </p>
         </section>
       </div>

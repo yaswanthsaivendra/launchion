@@ -1,20 +1,20 @@
-export interface PortfolioTag {
+export interface WorkTag {
     id: number;
     name: string;
     icon: string;
 }
 
-export interface PortfolioProject {
+export interface WorkProject {
     id: number;
     title: string;
     description: string;
     subdescription: string;
     liveUrl: string;
     image: string;
-    tags: PortfolioTag[];
+    tags: WorkTag[];
 }
 
-export const portfolioProjects: PortfolioProject[] = [
+export const workProjects: WorkProject[] = [
     {
         id: 1,
         title: "Patronus - Consent Manager Platform",
@@ -23,7 +23,7 @@ export const portfolioProjects: PortfolioProject[] = [
         subdescription:
             "Built using Next.js, Tailwind CSS, TypeScript, Django, Flask, and integrated with Keycloak for secure authentication, Patronus Consent Manager delivers a scalable, secure, and seamless experience for privacy compliance and consent management.",
         liveUrl: "https://getpatronus.com/",
-        image: "/portfolio/patronus.png",
+        image: "/work/patronus.png",
         tags: [
             { id: 1, name: "Next.js", icon: "SiNextdotjs" },
             { id: 2, name: "Django", icon: "SiDjango" },
@@ -40,7 +40,7 @@ export const portfolioProjects: PortfolioProject[] = [
         subdescription:
             "Developed using Next.js for a responsive frontend, integrated with Polygon blockchain for smart contracts, Web3.js for blockchain interactions, and styled with modern CSS frameworks. The platform features secure wallet integration, real-time property valuations, and automated dividend distributions through smart contracts.",
         liveUrl: "https://velaar.io/",
-        image: "/portfolio/velaar.png",
+        image: "/work/velaar.png",
         tags: [
             { id: 1, name: "Next.js", icon: "SiNextdotjs" },
             { id: 2, name: "Polygon", icon: "SiPolygon" },
@@ -57,12 +57,13 @@ export const portfolioProjects: PortfolioProject[] = [
         subdescription:
             "Developed using Django REST Framework for API development, Celery for asynchronous task processing, containerized with Docker for consistent deployment, and hosted on AWS for scalability and reliability.",
         liveUrl: "https://techsnap.in",
-        image: "/portfolio/techsnap.png",
+        image: "/work/techsnap.png",
         tags: [
-            { id: 1, name: "Django", icon: "SiDjango" },
-            { id: 2, name: "AWS", icon: "FaAws" },
-            { id: 3, name: "Docker", icon: "FaDocker" },
-            { id: 4, name: "Celery", icon: "SiCelery" },
+            { id: 1, name: "React", icon: "FaReact" },
+            { id: 2, name: "Django", icon: "SiDjango" },
+            { id: 3, name: "AWS", icon: "FaAws" },
+            { id: 4, name: "Docker", icon: "FaDocker" },
+            { id: 5, name: "Celery", icon: "SiCelery" },
         ],
     },
     {
@@ -73,7 +74,7 @@ export const portfolioProjects: PortfolioProject[] = [
         subdescription:
             "Built as a mobile-first application using React Native and Node.js, with Clerk for authentication and TailwindCSS for styling. The app delivers a smooth, native-like experience while maintaining robust security for domain transactions.",
         liveUrl: "https://domsell.store/",
-        image: "/portfolio/domsell.png",
+        image: "/work/domsell.png",
         tags: [
             { id: 1, name: "React Native", icon: "FaReact" },
             { id: 2, name: "Node.js", icon: "FaNode" },
@@ -88,7 +89,7 @@ export const portfolioProjects: PortfolioProject[] = [
         subdescription:
             "Built with Django REST Framework for robust API development, containerized with Docker for seamless deployment, and hosted on AWS for scalability. The frontend utilizes JavaScript for interactive learning experiences.",
         liveUrl: "https://unstarted.in/",
-        image: "/portfolio/unstarted.png",
+        image: "/work/unstarted.png",
         tags: [
             { id: 1, name: "Django", icon: "SiDjango" },
             { id: 2, name: "Docker", icon: "FaDocker" },
@@ -103,11 +104,12 @@ export const portfolioProjects: PortfolioProject[] = [
         subdescription:
             "Built using Python and Flask for the backend API, with a modern frontend styled using TailwindCSS. The platform delivers an intelligent, responsive chatbot experience that accelerates sales and improves customer service.",
         liveUrl: "https://www.helpfulgenie.app/",
-        image: "/portfolio/helpful-genie.png",
+        image: "/work/helpful-genie.png",
         tags: [
-            { id: 1, name: "Python", icon: "FaPython" },
-            { id: 2, name: "Flask", icon: "SiFlask" },
-            { id: 3, name: "TailwindCSS", icon: "SiTailwindcss" },
+            { id: 1, name: "React", icon: "FaReact" },
+            { id: 2, name: "Python", icon: "FaPython" },
+            { id: 3, name: "Flask", icon: "SiFlask" },
+            { id: 4, name: "TailwindCSS", icon: "SiTailwindcss" },
         ],
     },
 ];

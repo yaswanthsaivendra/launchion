@@ -55,7 +55,7 @@ export default function TermsPage() {
           <p className="text-muted-foreground">
             In order to resolve a complaint regarding the Site or to receive
             further information regarding use of the Site, please contact us at
-            support@launchion.com.
+            shubham@launchion.pro.
           </p>
         </section>
       </div>

@@ -78,7 +78,7 @@ export function FAQ() {
                     </h2>
                     <p className="text-muted-foreground mt-4">
                         Have another question?{" "}
-                        <a href="mailto:hello@launchion.com" className="text-primary hover:underline font-medium">
+                        <a href="mailto:shubham@launchion.pro" className="text-primary hover:underline font-medium">
                             Contact us
                         </a>
                         {" "}or reach out on{" "}
@@ -91,8 +91,8 @@ export function FAQ() {
 
                 <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
-                        <AccordionItem 
-                            key={index} 
+                        <AccordionItem
+                            key={index}
                             value={`item-${index}`}
                         >
                             <AccordionTrigger className="text-left text-base md:text-lg tracking-tight text-foreground">

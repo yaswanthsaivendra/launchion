@@ -54,13 +54,6 @@ export function Footer() {
             >
               About
             </Link>
-
-            <Link
-              href="#"
-              className="text-muted-foreground hover:text-primary text-sm transition-all duration-300 hover:translate-x-1"
-            >
-              Contact
-            </Link>
           </div>
 
           {/* Legal Column */}

@@ -4,7 +4,7 @@ import { Hero } from "@/components/landing/hero";
 import { Pricing } from "@/components/landing/pricing";
 import { ClientLogos } from "@/components/landing/client-logos";
 import { ProcessSection } from "@/components/landing/process-section";
-import { PortfolioSection } from "@/components/landing/portfolio-section";
+import { WorkSection } from "@/components/landing/work-section";
 
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
       </section>
 
       <ProcessSection />
-      <PortfolioSection />
+      <WorkSection />
       <Pricing />
       <FAQ />
       <CTA />
