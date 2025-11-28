@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Rocket } from "lucide-react";
+
 
 export function Footer() {
   return (
@@ -8,9 +8,9 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="group flex items-center gap-2">
-              <div className="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-lg transition-transform group-hover:scale-110">
-                <Rocket className="h-5 w-5" />
+            <Link href="/" className="group flex items-center gap-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-teal-400 text-white shadow-sm transition-transform group-hover:scale-110">
+                <span className="text-lg font-bold">L</span>
               </div>
               <span className="text-lg font-bold tracking-tight">
                 Launchion
