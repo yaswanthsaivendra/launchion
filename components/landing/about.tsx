@@ -58,7 +58,7 @@ const About = () => {
       description: "From concept to deployment",
     },
     {
-      number: "15",
+      number: "21",
       label: "Days Delivery",
       description: "Average time to launch",
     },
@@ -222,7 +222,7 @@ const About = () => {
                 Senior Engineers
               </p>
               <p className="text-muted-foreground text-xs leading-relaxed">
-                Crafting exceptional MVPs in 15 days with modern tech stack and
+                Crafting exceptional MVPs in 21 days with modern tech stack and
                 proven methodologies
               </p>
             </div>

@@ -6,25 +6,22 @@ import { ClientLogos } from "@/components/landing/client-logos";
 import { ProcessSection } from "@/components/landing/process-section";
 import { WorkSection } from "@/components/landing/work-section";
 
-
 export default function Home() {
   return (
     <main className="bg-background min-h-screen">
       <Hero />
 
-      <section className="py-10 border-b border-border/40">
-        <div className="container px-4 mx-auto text-center">
+      <section className="border-border/40 border-b py-10">
+        <div className="container mx-auto px-4 text-center">
           <ClientLogos />
         </div>
       </section>
 
-      <ProcessSection />
       <WorkSection />
+      <ProcessSection />
       <Pricing />
       <FAQ />
       <CTA />
-
-
     </main>
   );
 }

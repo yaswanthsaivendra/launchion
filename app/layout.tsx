@@ -24,11 +24,11 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Launchion | Launch Your MVP in 15 Days",
+    default: "Launchion | Launch Your MVP in 21 Days",
     template: "%s | Launchion",
   },
   description:
-    "Launchion is the ultimate boilerplate for startups. We turn your idea into a market-ready product in just 15 days with high-quality code and design.",
+    "Launchion is the ultimate boilerplate for startups. We turn your idea into a market-ready product in just 21 days with high-quality code and design.",
   keywords: [
     "MVP",
     "startup",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://launchion.pro",
-    title: "Launchion | Launch Your MVP in 15 Days",
+    title: "Launchion | Launch Your MVP in 21 Days",
     description:
       "Turn your idea into a market-ready product fast. No fluff, no endless meetings. Just high-quality code that converts.",
     siteName: "Launchion",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Launchion | Launch Your MVP in 15 Days",
+    title: "Launchion | Launch Your MVP in 21 Days",
     description:
       "Turn your idea into a market-ready product fast. No fluff, no endless meetings.",
     images: ["/og-image.jpg"],

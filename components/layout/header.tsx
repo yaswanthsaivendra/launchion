@@ -9,6 +9,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import { SiGooglemeet } from "react-icons/si";
 import { useState } from "react";
 
 export function Header() {
@@ -57,7 +58,13 @@ export function Header() {
             asChild
             className="rounded-full bg-[#0F172A] px-6 font-medium text-white hover:bg-[#0F172A]/90"
           >
-            <Link href="#pricing">Book Strategy Call</Link>
+            <Link
+              href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
+              target="_blank"
+            >
+              <SiGooglemeet className="mr-2 h-4 w-4" />
+              Book Strategy Call
+            </Link>
           </Button>
         </div>
 
@@ -141,7 +148,13 @@ export function Header() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 w-full rounded-xl text-base font-semibold shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
                       onClick={handleLinkClick}
                     >
-                      <Link href="#pricing">Book Strategy Call</Link>
+                      <Link
+                        href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
+                        target="_blank"
+                      >
+                        <SiGooglemeet className="mr-2 h-5 w-5" />
+                        Book Strategy Call
+                      </Link>
                     </Button>
                   </SheetClose>
                 </div>
