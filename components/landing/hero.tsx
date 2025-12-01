@@ -19,7 +19,7 @@ export function Hero() {
           <div className="animate-in fade-in slide-in-from-bottom-8 space-y-6 text-center duration-700 sm:space-y-8 lg:text-left">
             {/* Top Badge */}
             <div className="border-border inline-flex items-center gap-2 rounded-full border bg-white px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
-              <div className="bg-primary h-2 w-2 rounded-full" />
+              <div className="bg-primary h-2 w-2 animate-pulse rounded-full" />
               <span className="text-foreground text-xs font-medium sm:text-sm">
                 Accepting 2 new founders for Dec
               </span>

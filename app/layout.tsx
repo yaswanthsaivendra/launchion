@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Launchion",
     images: [
       {
-        url: "/og-image.jpg", // We should create this later
+        url: "/og-image.png", // We should create this later
         width: 1200,
         height: 630,
         alt: "Launchion - Launch Your MVP",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Launchion | Launch Your MVP in 21 Days",
     description:
       "Turn your idea into a market-ready product fast. No fluff, no endless meetings.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
     creator: "@launchion",
   },
   metadataBase: new URL("https://launchion.pro"),
