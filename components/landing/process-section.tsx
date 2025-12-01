@@ -42,7 +42,7 @@ export function ProcessSection() {
       icon: FaRocket,
       iconBg: "bg-green-100",
       iconColor: "text-green-600",
-      days: "Day 21",
+      days: "Day 15-21",
       title: "Launch & Handover",
       description: "Deployment, Hosting, Full Code Handover. You are live.",
       isHighlight: true,

@@ -22,8 +22,33 @@ export function Header() {
     { name: "Pricing", href: "/#pricing" },
   ];
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    // Close the mobile menu
     setOpen(false);
+
+    // Handle hash navigation for smooth scrolling
+    if (href.includes("#")) {
+      const hash = href.split("#")[1];
+      if (hash) {
+        e.preventDefault();
+
+        // Wait for the sheet to close (300ms animation) before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            // Update URL hash
+            window.history.pushState(null, "", `#${hash}`);
+          }
+        }, 350);
+      }
+    }
   };
 
   return (
@@ -48,6 +73,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleLinkClick(e, item.href)}
                 className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
               >
                 {item.name}
@@ -97,7 +123,7 @@ export function Header() {
                   <Link
                     href="/"
                     className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
-                    onClick={handleLinkClick}
+                    onClick={(e) => handleLinkClick(e, "/")}
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-teal-400 text-white shadow-sm">
                       <span className="text-xl font-bold">L</span>
@@ -119,12 +145,12 @@ export function Header() {
                 </div>
 
                 {/* Navigation Items */}
-                <nav className="flex-1 space-y-2 overflow-y-auto px-6 py-8">
+                <nav className="flex-1 space-y-2 overflow-y-auto overscroll-contain px-6 py-8 [-webkit-overflow-scrolling:touch]">
                   {navItems.map((item, index) => (
                     <SheetClose key={item.name} asChild>
                       <Link
                         href={item.href}
-                        onClick={handleLinkClick}
+                        onClick={(e) => handleLinkClick(e, item.href)}
                         className="group text-foreground hover:bg-primary/10 hover:text-primary animate-in fade-in slide-in-from-left-4 flex items-center gap-3 rounded-xl px-4 py-4 text-lg font-semibold transition-all duration-300 hover:translate-x-2 active:scale-95"
                         style={{
                           animationDelay: `${index * 75}ms`,
@@ -146,7 +172,6 @@ export function Header() {
                     <Button
                       asChild
                       className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 w-full rounded-xl text-base font-semibold shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
-                      onClick={handleLinkClick}
                     >
                       <Link
                         href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
