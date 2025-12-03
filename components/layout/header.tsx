@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { LaunchionLogo } from "@/components/ui/logo";
 import {
   Sheet,
   SheetContent,
@@ -56,10 +57,8 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-teal-400 text-white shadow-sm">
-              <span className="text-lg font-bold">L</span>
-            </div>
+          <Link href="/" className="flex items-center gap-0">
+            <LaunchionLogo className="h-11 w-11" />
             <span className="text-foreground text-xl font-bold tracking-tight">
               Launchion
             </span>
@@ -82,7 +81,7 @@ export function Header() {
           </nav>
           <Button
             asChild
-            className="rounded-full bg-[#0F172A] px-6 font-medium text-white hover:bg-[#0F172A]/90"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 font-medium shadow-md"
           >
             <Link
               href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
@@ -122,12 +121,10 @@ export function Header() {
                 <div className="border-border/50 animate-in fade-in slide-in-from-top-4 flex items-center justify-between border-b p-6 duration-500">
                   <Link
                     href="/"
-                    className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
+                    className="flex items-center gap-2.5 transition-transform duration-300 hover:scale-105"
                     onClick={(e) => handleLinkClick(e, "/")}
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-teal-400 text-white shadow-sm">
-                      <span className="text-xl font-bold">L</span>
-                    </div>
+                    <LaunchionLogo className="h-12 w-12" />
                     <span className="text-foreground text-xl font-bold tracking-tight">
                       Launchion
                     </span>
