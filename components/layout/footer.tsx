@@ -57,7 +57,7 @@ export function Footer() {
 
           {/* Builders Column */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold tracking-tight">Builders</h3>
+            <h3 className="font-semibold tracking-tight">Founders/Builders</h3>
             <Link
               href="https://x.com/npm_shubham"
               target="_blank"
