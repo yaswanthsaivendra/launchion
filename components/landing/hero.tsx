@@ -54,7 +54,7 @@ export function Hero() {
                 asChild
               >
                 <Link
-                  href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
+                  href="https://cal.com/shubham-verma/mvp-discussion-with-launchion"
                   target="_blank"
                 >
                   <SiGooglemeet className="h-5 w-5" />
