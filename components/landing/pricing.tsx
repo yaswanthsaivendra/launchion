@@ -6,49 +6,59 @@ const plans = [
   {
     name: "Spark",
     price: "$999",
-    description: "Perfect for validating your idea quickly.",
+    priceNote: "/ one-time",
+    description: "Validate your startup idea before building the MVP.",
     features: [
-      "High-converting Landing Page",
-      "Waitlist Integration",
-      "Basic Brand Identity",
-      "5-Day Delivery",
-      "Responsive Design",
+      "Idea Validation Landing Page",
+      "Clear Value Proposition & Messaging",
+      "Waitlist / Early Access Setup",
+      "Basic Brand Direction",
+      "Responsive, Mobile-First Design",
       "SEO Basics",
     ],
+    delivery: "Delivery: 5–7 days",
     cta: "Start Spark",
     popular: false,
   },
   {
     name: "Ignite",
     price: "$2,999",
-    description: "The complete MVP package for early adopters.",
+    priceNote: "/ one-time",
+    description: "Launch your MVP in 21 days and start onboarding real users.",
     features: [
-      "Full Web Application (Next.js)",
-      "Authentication (Google/Email)",
-      "Database Setup (Postgres)",
-      "3-5 Core Features",
-      "Payment Integration (Stripe)",
-      "15-Day Delivery",
-      "Admin Dashboard Basic",
+      "Full MVP Web Application",
+      "Authentication & User Management",
+      "Core Backend & Database Setup",
+      "2–3 Core MVP Features",
+      "Payment Integration",
+      "Founder Dashboard",
+      "AI-assisted Features (where applicable)",
+      "One active revision at a time during active build",
+      "Post-launch 1-month bug fix",
     ],
+    delivery: "Delivery: 21 days",
     cta: "Start Ignite",
     popular: true,
+    popularLabel: "🔥 Most Popular",
   },
   {
-    name: "Liftoff",
-    price: "$5,999",
-    description: "Scale-ready architecture for serious startups.",
+    name: "Orbit (Custom)",
+    price: "Starting at $5,999",
+    priceNote: "",
+    description: "For startups ready to scale, fundraise, or go to production.",
     features: [
       "Everything in Ignite",
-      "Advanced Admin Dashboard",
-      "Advanced Analytics",
-      "Priority Support (1 Month)",
-      "Advanced SEO Optimization",
-      "20-Day Delivery",
-      "Custom API Integration",
+      "Advanced Admin & Analytics",
+      "Performance & Scalability Optimization",
+      "Custom API Integrations",
+      "Production-Ready Architecture",
+      "Priority Support",
+      "Flexible Timeline & Scope",
     ],
-    cta: "Start Liftoff",
+    delivery: "",
+    cta: "Book a Strategy Call",
     popular: false,
+    isCustom: true,
   },
 ];
 
@@ -83,7 +93,7 @@ export function Pricing() {
             >
               {plan.popular && (
                 <div className="bg-primary text-primary-foreground absolute -top-4 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-sm font-bold shadow-lg">
-                  Most Popular
+                  {plan.popularLabel || "Most Popular"}
                 </div>
               )}
 
@@ -95,9 +105,11 @@ export function Pricing() {
                   <span className="text-3xl font-bold tracking-tight lg:text-4xl">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground text-sm">
-                    /one-time
-                  </span>
+                  {plan.priceNote && (
+                    <span className="text-muted-foreground text-sm">
+                      {plan.priceNote}
+                    </span>
+                  )}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {plan.description}
@@ -116,11 +128,19 @@ export function Pricing() {
                 ))}
               </ul>
 
+              {plan.delivery && (
+                <p className="text-muted-foreground mb-6 text-sm font-medium lg:mb-8">
+                  {plan.delivery}
+                </p>
+              )}
+
               <Button
                 className={`w-full transition-all duration-300 ${
                   plan.popular
                     ? "bg-primary hover:bg-primary/90 hover:scale-105 hover:shadow-lg"
-                    : "bg-card hover:bg-accent border-border hover:border-primary border hover:shadow-md"
+                    : plan.isCustom
+                      ? "bg-card hover:bg-accent border-border hover:border-primary border hover:shadow-md"
+                      : "bg-card hover:bg-accent border-border hover:border-primary border hover:shadow-md"
                 }`}
                 variant={plan.popular ? "default" : "outline"}
                 size="lg"

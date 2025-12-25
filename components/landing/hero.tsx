@@ -24,7 +24,7 @@ export function Hero() {
             <div className="border-primary/20 bg-primary/5 inline-flex items-center gap-2 rounded-full border px-4 py-2 shadow-sm">
               <div className="bg-primary h-2 w-2 animate-pulse rounded-full" />
               <span className="text-foreground text-sm font-medium">
-                Accepting 2 new founders for Dec
+                Available for New Projects
               </span>
             </div>
 

@@ -21,6 +21,7 @@ export function Header() {
     { name: "Our Work", href: "/#work" },
     { name: "Process", href: "/#process" },
     { name: "Pricing", href: "/#pricing" },
+    { name: "Founders", href: "/founders" },
   ];
 
   const handleLinkClick = (
