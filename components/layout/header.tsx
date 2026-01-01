@@ -11,10 +11,13 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { SiGooglemeet } from "react-icons/si";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -31,13 +34,14 @@ export function Header() {
     // Close the mobile menu
     setOpen(false);
 
-    // Handle hash navigation for smooth scrolling
+    // Handle hash navigation
     if (href.includes("#")) {
-      const hash = href.split("#")[1];
-      if (hash) {
-        e.preventDefault();
+      e.preventDefault();
+      const [path, hash] = href.split("#");
+      const targetPath = path || "/";
 
-        // Wait for the sheet to close (300ms animation) before scrolling
+      // If we're already on the target page, just scroll
+      if (pathname === targetPath && hash) {
         setTimeout(() => {
           const element = document.getElementById(hash);
           if (element) {
@@ -45,13 +49,37 @@ export function Header() {
               behavior: "smooth",
               block: "start",
             });
-            // Update URL hash
             window.history.pushState(null, "", `#${hash}`);
           }
         }, 350);
+      } else {
+        // Navigate to the page first, then scroll
+        router.push(href);
+        // The scrolling will happen after navigation via useEffect
       }
+    } else {
+      // Regular navigation without hash
+      e.preventDefault();
+      router.push(href);
     }
   };
+
+  // Handle scrolling after navigation with hash
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  }, [pathname]);
 
   return (
     <header className="bg-background/80 border-border/50 sticky top-0 z-50 w-full border-b backdrop-blur-md">
