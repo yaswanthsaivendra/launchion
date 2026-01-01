@@ -113,7 +113,7 @@ export function Header() {
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 font-medium shadow-md"
           >
             <Link
-              href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
+              href="https://cal.com/shubham-verma/mvp-discussion-with-launchion"
               target="_blank"
             >
               <SiGooglemeet className="mr-2 h-4 w-4" />
@@ -200,7 +200,7 @@ export function Header() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 w-full rounded-xl text-base font-semibold shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
                     >
                       <Link
-                        href="https://cal.com/shubham-verma/mvp-discussion-with-shubham"
+                        href="https://cal.com/shubham-verma/mvp-discussion-with-launchion"
                         target="_blank"
                       >
                         <SiGooglemeet className="mr-2 h-5 w-5" />
