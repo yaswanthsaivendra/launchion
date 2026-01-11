@@ -15,7 +15,7 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Centered Content */}
-        <div className="animate-in fade-in slide-in-from-bottom-8 mx-auto max-w-5xl space-y-8 text-center duration-700 sm:space-y-6 md:space-y-8">
+        <div className="animate-in fade-in slide-in-from-bottom-8 mx-auto max-w-5xl space-y-8 text-center duration-700 sm:space-y-4 md:space-y-4">
           {/* Top Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur-sm">
             <div className="bg-primary h-2 w-2 animate-pulse rounded-full" />
