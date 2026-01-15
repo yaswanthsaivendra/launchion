@@ -5,7 +5,6 @@ import {
   FaTwitter,
   FaGithub,
   FaEnvelope,
-  FaQuoteLeft,
   FaDiscord,
 } from "react-icons/fa";
 import Image from "next/image";
@@ -102,55 +101,48 @@ const getSocialIcon = (platform: string) => {
 
 export function FoundersSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-purple-50/50 via-white to-white py-20 pt-32 md:py-32 md:pt-40">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10">
-        <div className="from-primary/5 absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br to-transparent blur-3xl" />
-        <div className="from-secondary/5 absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tr to-transparent blur-3xl" />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6">
+    <section
+      id="builders"
+      className="bg-background overflow-hidden py-12 sm:py-16 md:py-20"
+    >
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         {/* Header */}
-        <div className="animate-in fade-in slide-in-from-bottom-8 mx-auto mb-16 max-w-3xl text-center duration-700">
-          <div className="border-primary/20 bg-primary/5 mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 shadow-sm">
+        <div className="animate-in fade-in slide-in-from-bottom-8 mx-auto mb-12 max-w-3xl text-center duration-700 sm:mb-16">
+          <div className="border-primary/20 bg-primary/5 mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 shadow-sm">
             <div className="bg-primary h-2 w-2 animate-pulse rounded-full" />
             <span className="text-foreground text-sm font-medium">
-              Meet the Team
+              Meet the Builders
             </span>
           </div>
 
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            The Minds Behind <span className="text-primary">Launchion</span>
-          </h1>
+          <h2 className="mb-3 px-2 text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">
+            Built by <span className="text-primary">Experienced Founders</span>
+          </h2>
 
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl">
-            We&apos;re a team of experienced builders who&apos;ve been in your
-            shoes. We know what it takes to ship fast, validate ideas, and scale
-            products.
+          <p className="text-muted-foreground px-2 text-base sm:text-lg">
+            We&apos;ve been in your shoes. We know what it takes to ship fast,
+            validate ideas, and scale products.
           </p>
         </div>
 
-        {/* Founders Grid */}
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-16">
-          {founders.map((founder, index) => (
-            <div
-              key={founder.name}
-              className="animate-in fade-in slide-in-from-bottom-8 group relative"
-              style={{
-                animationDelay: `${index * 150}ms`,
-                animationDuration: "700ms",
-              }}
-            >
-              {/* Card */}
-              <div className="border-primary/10 relative overflow-hidden rounded-3xl border-2 bg-white p-8 shadow-xl transition-all duration-500 hover:shadow-2xl sm:p-10">
-                {/* Gradient Overlay on Hover */}
-                <div className="from-primary/5 to-secondary/5 absolute inset-0 -z-10 bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                {/* Image Section */}
-                <div className="mb-6 flex flex-col items-center sm:flex-row sm:items-start sm:gap-6">
-                  <div className="relative mb-4 sm:mb-0">
+        {/* Single Parent Card containing both founders */}
+        <div className="bg-background border-border animate-in fade-in slide-in-from-bottom-8 rounded-2xl border p-6 shadow-sm transition-all duration-300 duration-700 hover:shadow-lg sm:p-8">
+          {/* Founders Grid - 2 columns inside the parent card */}
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
+            {founders.map((founder, index) => (
+              <div
+                key={founder.name}
+                className="group bg-muted/30 border-border hover:bg-background flex h-full flex-col rounded-xl border p-5 shadow-sm transition-all duration-300 hover:shadow-md"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animationFillMode: "both",
+                }}
+              >
+                {/* Image and Basic Info */}
+                <div className="mb-4 flex items-start gap-4">
+                  <div className="relative flex-shrink-0">
                     {/* Image Container with Gradient Border */}
-                    <div className="from-primary to-secondary relative h-40 w-40 rounded-2xl bg-gradient-to-br p-1 shadow-lg transition-transform duration-500 group-hover:scale-105">
+                    <div className="from-primary to-secondary relative h-20 w-20 rounded-2xl bg-gradient-to-br p-1 shadow-md transition-transform duration-500 group-hover:scale-105 sm:h-24 sm:w-24">
                       <div className="h-full w-full overflow-hidden rounded-2xl bg-white">
                         <div className="relative h-full w-full">
                           <Image
@@ -158,28 +150,23 @@ export function FoundersSection() {
                             alt={founder.name}
                             fill
                             className="object-cover"
-                            sizes="160px"
+                            sizes="96px"
                           />
                         </div>
                       </div>
                     </div>
-
-                    {/* Decorative Elements */}
-                    <div className="from-primary/20 absolute -top-2 -right-2 h-8 w-8 rounded-full bg-gradient-to-br to-transparent blur-md" />
-                    <div className="from-secondary/20 absolute -bottom-2 -left-2 h-10 w-10 rounded-full bg-gradient-to-br to-transparent blur-md" />
                   </div>
 
-                  {/* Name and Role */}
-                  <div className="flex-1 text-center sm:text-left">
-                    <h2 className="text-foreground mb-2 text-2xl font-bold sm:text-3xl">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="mb-1 line-clamp-1 text-lg font-bold sm:text-xl">
                       {founder.name}
-                    </h2>
-                    <p className="text-primary mb-4 text-lg font-semibold">
+                    </h3>
+                    <p className="text-primary mb-3 text-sm font-semibold sm:text-base">
                       {founder.role}
                     </p>
 
                     {/* Social Links */}
-                    <div className="flex justify-center gap-3 sm:justify-start">
+                    <div className="flex gap-2">
                       {founder.socials.map((social) => {
                         const Icon = getSocialIcon(social.platform);
                         return (
@@ -188,9 +175,9 @@ export function FoundersSection() {
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:bg-primary/10 hover:text-primary text-muted-foreground hover:border-primary/20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent transition-all duration-300 hover:scale-110"
+                            className="hover:bg-primary/10 hover:text-primary text-muted-foreground hover:border-primary/20 flex h-8 w-8 items-center justify-center rounded-full border-2 border-transparent transition-all duration-300 hover:scale-110"
                           >
-                            <Icon className="h-5 w-5" />
+                            <Icon className="h-4 w-4" />
                           </Link>
                         );
                       })}
@@ -199,21 +186,13 @@ export function FoundersSection() {
                 </div>
 
                 {/* Bio */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow text-sm leading-relaxed">
                   {founder.bio}
                 </p>
 
-                {/* Quote */}
-                <div className="bg-primary/5 border-primary/10 relative mb-6 rounded-xl border p-4">
-                  <FaQuoteLeft className="text-primary/20 absolute top-2 left-2 h-6 w-6" />
-                  <p className="text-foreground pl-8 text-sm leading-relaxed italic">
-                    &quot;{founder.quote}&quot;
-                  </p>
-                </div>
-
                 {/* Expertise Tags */}
-                <div>
-                  <p className="text-muted-foreground mb-3 text-xs font-semibold tracking-wider uppercase">
+                <div className="border-border border-t pt-4">
+                  <p className="text-muted-foreground mb-2 text-xs font-semibold tracking-wider uppercase">
                     Expertise
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -228,8 +207,8 @@ export function FoundersSection() {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

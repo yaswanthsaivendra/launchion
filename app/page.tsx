@@ -4,6 +4,7 @@ import { Hero } from "@/components/landing/hero";
 import { Pricing } from "@/components/landing/pricing";
 import { ProcessSection } from "@/components/landing/process-section";
 import { WorkSection } from "@/components/landing/work-section";
+import { FoundersSection } from "@/components/landing/founders";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
 
       <WorkSection />
+      <FoundersSection />
       <ProcessSection />
       <Pricing />
       <FAQ />
